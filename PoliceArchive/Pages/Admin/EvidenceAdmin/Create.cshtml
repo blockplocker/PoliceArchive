@@ -1,0 +1,52 @@
+﻿@page
+@model PoliceArchive.Pages.Admin.EvidenceAdmin.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Evidence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Evidence.Type" class="control-label"></label>
+                <input asp-for="Evidence.Type" class="form-control" />
+                <span asp-validation-for="Evidence.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evidence.Description" class="control-label"></label>
+                <input asp-for="Evidence.Description" class="form-control" />
+                <span asp-validation-for="Evidence.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evidence.DateCollected" class="control-label"></label>
+                <input asp-for="Evidence.DateCollected" class="form-control" />
+                <span asp-validation-for="Evidence.DateCollected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evidence.PolicemanID" class="control-label"></label>
+                <select asp-for="Evidence.PolicemanID" class ="form-control" asp-items="ViewBag.PolicemanID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Evidence.ArchiveBoxID" class="control-label"></label>
+                <select asp-for="Evidence.ArchiveBoxID" class ="form-control" asp-items="ViewBag.ArchiveBoxID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
