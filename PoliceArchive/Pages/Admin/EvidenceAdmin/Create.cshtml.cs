@@ -21,8 +21,8 @@ namespace PoliceArchive.Pages.Admin.EvidenceAdmin
 
         public IActionResult OnGet()
         {
-        ViewData["ArchiveBoxID"] = new SelectList(_context.Set<ArchiveBox>(), "Id", "Id");
-        ViewData["PolicemanID"] = new SelectList(_context.Policeman, "Id", "Id");
+        ViewData["ArchiveBoxID"] = new SelectList(_context.Set<ArchiveBox>(), "Id", "Name");
+        ViewData["PolicemanID"] = new SelectList(_context.Policeman, "Id", "FirstName");
             return Page();
         }
 
